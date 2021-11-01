@@ -1,0 +1,22 @@
+/JOB
+//NAME R1SRCHNG
+//POS
+///NPOS 0,0,0,0,0,0
+//INST
+///DATE 2010/03/12 08:48
+///ATTR SC,RW,MC
+NOP
+'----------------------------
+'----- DX -------------------
+'--- ver.2.0.1 --------------
+'--- Yaskawa America Inc. ---
+'--- Motoman Robotic Div. ---
+'--- 2013Jul22; TL ----------
+'----------------------------
+DOUT OT#(1841) OFF
+DOUT OT#(1842) OFF
+DOUT OT#(1843) OFF
+DOUT OT#(1844) OFF
+DOUT OT#(1845) OFF
+DOUT OT#(1846) OFF
+END

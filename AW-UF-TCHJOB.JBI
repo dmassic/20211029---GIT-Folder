@@ -1,0 +1,329 @@
+/JOB
+//NAME AW-UF-TCHJOB
+///FOLDERNAME UFRAME
+//POS
+///NPOS 0,0,0,1,0,1
+///TOOL 1
+///POSTYPE PULSE
+///PULSE
+P00126=0,-80000,-25000,0,-113945,0
+///TOOL 0
+///POSTYPE ANGLE
+///ANGLE
+EX00000=90.0000
+//INST
+///DATE 2021/10/29 11:29
+///COMM TCH UFRAME JOB
+///ATTR SC,RW
+///GROUP1 RB1
+///GROUP2 ST2
+///LVARS 0,0,28,0,0,28,0,28
+NOP
+'--------------------------------
+' 
+'  - FOR USE WITH TOUCHSENSING
+'    TO CREATE DYNAMIC
+'    USERFRAME ON
+'    ARCWORLD DX200
+' 
+'--------------------------------
+' 
+'        INITIALIZATION
+' 
+'--------------------------------
+'     MOVE THE POSITIONER TO
+'         ABSOLUT 90DEG
+' 
+MOVJ P126  +MOVJ EX000
+' 
+'--------------------------------
+' 
+'     SETTING UP LOCAL
+'     Position VARIABLE
+' 
+GETS LPX000 $PX001
+GETS LPX010 $PX001
+GETS LPX011 $PX001
+GETS LPX012 $PX001
+' 
+'--------------------------------
+'             ORG
+'--------------------------------
+' 
+'     **X**
+' 
+'------------------------
+'TEACH A SAFE
+'LEAD-IN FOR POINT
+'FOR ORG BELOW
+' 
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON X AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX001 $PX001
+GETE LD000 LP001 (1)
+ADD LD000 -500
+SETE LP001 (1) LD000
+MOVL LP001 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX001 $PX003
+GETE LD001 LP001 (1)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'     **Y**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Y AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX002 $PX001
+GETE LD000 LP002 (2)
+ADD LD000 -500
+SETE LP002 (2) LD000
+MOVL LP002 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX002 $PX003
+GETE LD002 LP002 (2)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'     **Z**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Z AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX003 $PX001
+GETE LD000 LP003 (3)
+ADD LD000 -500
+SETE LP003 (3) LD000
+MOVL LP003 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX003 $PX003
+GETE LD003 LP003 (3)
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'------------------------
+'    ORG POINT
+'  ELEMENTS SETUP
+' 
+SETE LP010 (1) LD001
+SETE LP010 (2) LD002
+SETE LP010 (3) LD003
+' 
+'------------------------
+'--------------------------------
+'              XX
+'--------------------------------
+' 
+'     **X**
+' 
+'------------------------
+'TEACH A SAFE
+'LEAD-IN FOR POINT
+'FOR XX BELOW
+' 
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON X AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX004 $PX001
+GETE LD000 LP004 (1)
+ADD LD000 500
+SETE LP004 (1) LD000
+MOVL LP004 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX004 $PX003
+GETE LD004 LP004 (1)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'     **Y**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Y AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX005 $PX001
+GETE LD000 LP005 (2)
+ADD LD000 -500
+SETE LP005 (2) LD000
+MOVL LP005 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX005 $PX003
+GETE LD005 LP005 (2)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'     **Z**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Z AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX006 $PX001
+GETE LD000 LP006 (3)
+ADD LD000 -500
+SETE LP006 (3) LD000
+MOVL LP006 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX006 $PX003
+GETE LD006 LP006 (3)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+'------------------------
+'    XX POINT
+'  ELEMENTS SETUP
+' 
+SETE LP011 (1) LD004
+SETE LP011 (2) LD005
+SETE LP011 (3) LD006
+'------------------------
+'--------------------------------
+'             XY
+'--------------------------------
+' 
+'     **X**
+' 
+'------------------------
+'TEACH A SAFE
+'LEAD-IN FOR POINT
+'FOR XY BELOW
+' 
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON X AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX007 $PX001
+GETE LD000 LP007 (1)
+ADD LD000 -500
+SETE LP007 (1) LD000
+MOVL LP007 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX007 $PX003
+GETE LD007 LP007 (1)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+' 
+'     **Y**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Y AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX008 $PX001
+GETE LD000 LP008 (2)
+ADD LD000 500
+SETE LP008 (2) LD000
+MOVL LP008 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX008 $PX003
+GETE LD008 LP008 (2)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'--------------------------------
+' 
+'     **Z**
+' 
+'------------------------
+'TEACH A NEAR POINT
+'APPROX 10MM
+'FROM THE SURFACE
+'ON Z AXIS
+' 
+' 
+'------------------------
+' - DO NOT MODIFY BELOW-
+GETS LPX009 $PX001
+GETE LD000 LP009 (3)
+ADD LD000 -500
+SETE LP009 (3) LD000
+MOVL LP009 V=3.4 SRCH RIN#(1)=ON DIS=20.0  +MOVJ EX000
+GETS LPX009 $PX003
+GETE LD009 LP009 (3)
+'------------------------
+' 
+'TEACH A TRANSITION POINT BELOW
+' 
+' 
+'------------------------
+'------------------------
+'    XY POINT
+'  ELEMENTS SETUP
+' 
+SETE LP012 (1) LD007
+SETE LP012 (2) LD008
+SETE LP012 (3) LD009
+'--------------------------------
+'         ****MFRAM****
+'--------------------------------
+MFRAME UF#(10) LPX010 LPX011 LPX012 MTOOL
+END

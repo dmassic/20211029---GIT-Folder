@@ -1,0 +1,30 @@
+/JOB
+//NAME S3-DEGREE
+///FOLDERNAME MASTER
+//POS
+///NPOS 0,0,0,0,0,2
+///TOOL 0
+///POSTYPE PULSE
+///PULSE
+EX00052=157730
+EX00059=157730
+//INST
+///DATE 2021/10/29 11:49
+///COMM SET S3 TOOLING ANGLE
+///ATTR SC,RO
+///GROUP1 ST3
+///LVARS 0,0,2,1,0,0,0,0
+NOP
+'This job assists in setting
+'the tooling angle for S3 Asis.
+'Set the desired angle in LR000.
+'Pos values=for. Neg values=rev.
+'*******************************
+SET LR000 0
+'*******************************
+'Calculate and move S3 axis.
+GETE LD000 EX052 (1)
+SET LD001  EXPRESS 626688 / 360 * LR000 + LD000
+SETE EX059 (1) LD001
+MOVJ EX059 VJ=50.00
+END

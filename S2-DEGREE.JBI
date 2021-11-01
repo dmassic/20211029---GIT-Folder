@@ -1,0 +1,30 @@
+/JOB
+//NAME S2-DEGREE
+///FOLDERNAME MASTER
+//POS
+///NPOS 0,0,0,0,0,2
+///TOOL 0
+///POSTYPE PULSE
+///PULSE
+EX00041=157730
+EX00049=157730
+//INST
+///DATE 2021/10/29 11:49
+///COMM SET S2 TOOLING ANGLE
+///ATTR SC,RO
+///GROUP1 ST2
+///LVARS 0,0,2,1,0,0,0,0
+NOP
+'This job assists in setting
+'the tooling angle for S2 Asis.
+'Set the desired angle in LR000.
+'Pos values=for. Neg values=rev.
+'*******************************
+SET LR000 0
+'*******************************
+'Calculate and move S2 axis.
+GETE LD000 EX041 (1)
+SET LD001  EXPRESS 626688 / 360 * LR000 + LD000
+SETE EX049 (1) LD001
+MOVJ EX049 VJ=50.00
+END
